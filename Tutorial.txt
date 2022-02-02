@@ -1,0 +1,17 @@
+1. composer require laravel/ui
+2. php artisan ui bootstrap
+3. php artisan ui react
+4. npm install 
+5. npm run dev
+
+for live server
+
+1. change root server.php file into index.php
+2. htaccess.php file into root file htaccess
+3. external file before public/
+
+For loading Component
+1. npm run dev
+
+For every changing will be trac
+1. npm run watch
