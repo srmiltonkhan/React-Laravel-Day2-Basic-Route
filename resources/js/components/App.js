@@ -1,41 +1,28 @@
-import React, {Component} from "react";
+import React from "react";
 
 import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Layout from "./RoutePages/Layout";
+import Home from "./RoutePages/Home";
+import Blogs from "./RoutePages/Blogs";
+import Contact from "./RoutePages/Contact";
+import NoPage from "./RoutePages/NoPage";
 
-class App extends Component {
-    state = {
-        counter: 0,
-    }
-    IncrementCount = (value) => {
-       let newCounter = this.state.counter + value;
-       this.setState(
-           {
-            counter: newCounter,
-           }
-       )
-    }
-
-    DecrementCount = (value) =>{
-        let newCounter = this.state.counter - value;
-        this.setState(
-            {
-                counter:newCounter,
-            }
-        )
-    }
-    render() {
-        return (
-            <>
-                <h1 className="mt-2">Count: {this.state.counter}</h1>
-                <button className="btn btn-success" onClick={ () => this.IncrementCount(5)}>+</button>
-                <button className="btn btn-danger" onClick={ () => this.DecrementCount(2)}>+</button>
-            </>
-        );
-    }
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="blog" element={<Blogs />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<NoPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
-export default App;
 
 if (document.getElementById("app")) {
     ReactDOM.render(<App />, document.getElementById("app"));
