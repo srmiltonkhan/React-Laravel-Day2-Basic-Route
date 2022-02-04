@@ -3,7 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Layout from "./RoutePages/Layout";
+import Layout from "./Layout";
+
 import Home from "./RoutePages/Home";
 import Blogs from "./RoutePages/Blogs";
 import Contact from "./RoutePages/Contact";

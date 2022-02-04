@@ -1,8 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
+import Footer from "./layout/Footer";
+import Header from "./layout/Header";
 
 const Layout = () => {
     return (
         <>
+            <Header />
+
             <nav>
                 <ul>
                     <li>
@@ -17,6 +21,8 @@ const Layout = () => {
                 </ul>
             </nav>
 
+            <Footer />
+            {/* The <Outlet> renders the current route selected. */}
             <Outlet />
         </>
     );
